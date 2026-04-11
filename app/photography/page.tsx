@@ -21,6 +21,7 @@ const photos = [
   { id: 13, src: "/13.jpg", alt: "13", width: 4958, height: 3801 },
   { id: 14, src: "/14.JPG", alt: "14", width: 6000, height: 4000 },
   { id: 15, src: "/15.JPG", alt: "15", width: 6000, height: 4000 },
+  { id: 16, src: "/16.jpg", alt: "16", width: 4056, height: 2850 },
 ];
 
 export default function PhotographyPage() {

@@ -24,7 +24,7 @@ export default function RootLayout({
       {/* 設定 Body 樣式 */}
       <body className="h-full flex items-center justify-center p-0 md:p-4 bg-[#a2d2ff]">  
         {/* 大視窗框架 */}
-        <div className="retro-window relative w-full max-w-[1200px] h-full md:h-[90vh] flex flex-col bg-[#ffebd9] overflow-hidden">  
+        <div className="retro-window relative w-full h-full flex flex-col bg-[#ffebd9] overflow-hidden">  
           {/* 視窗頂部標題列 */}
           <div className="retro-header border-b-4 border-black bg-black text-white px-4 py-2 flex justify-between items-center shrink-0">
             {/* 左側標題區域 */}
@@ -56,7 +56,7 @@ export default function RootLayout({
                 backgroundImage: 'radial-gradient(rgba(0,0,0,0.05) 4px, transparent 1px)', 
                 backgroundSize: '20px 20px' 
               }}>
-              <div className="max-w-4xl mx-auto relative z-10">
+              <div className="max-w-6xl mx-auto relative z-10">
                 {children}
               </div>
             </div>

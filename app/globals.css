@@ -47,7 +47,9 @@ body { /* 設定網頁主體的樣式 */
   cursor: pointer;
   transition: all 0.1s;
   font-size: 12px;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* 按鈕被點擊時的狀態 */

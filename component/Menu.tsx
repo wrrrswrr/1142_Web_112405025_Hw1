@@ -15,7 +15,7 @@ const MenuContent = () => {
     { href: "/about", label: "關於我 ABOUT", color: "bg-[#ffcc9f]" },
     { href: "/hobby", label: "我的興趣 HOBBY", color: "bg-[#FFECDB]" },
     { href: "/photography", label: "攝影作品 PHOTO", color: "bg-[#ffcc9f]" },
-    { href: "/design", label: "設計專案 DESIGN", color: "bg-[#FFECDB]" },
+    { href: "/design", label: "設計作品 DESIGN", color: "bg-[#FFECDB]" },
     { href: "/code", label: "程式專案 CODE", color: "bg-[#ffcc9f]" },
   ];
 

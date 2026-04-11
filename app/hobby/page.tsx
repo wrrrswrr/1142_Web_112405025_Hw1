@@ -31,6 +31,9 @@ export default function Hobby() {
           {hobbies.map((hobby, index) => (
             <motion.div 
               key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
               whileHover={{ y: -5 }}
               className="retro-window p-4 flex flex-col gap-4"
               style={{ backgroundColor: hobby.color }}>

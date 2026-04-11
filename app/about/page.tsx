@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { User, Shield, Zap, Heart, Star } from "lucide-react";
+import { Heart, Star } from "lucide-react";
 
 export default function About() {
   const stats = [
@@ -15,52 +15,47 @@ export default function About() {
     <div className="flex flex-col gap-6">
       {/* 頁面動畫 */}
       <motion.div 
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.5, type: "spring" }}
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
         className="retro-window bg-white overflow-hidden">
         {/* 視窗頂部 */}
         <div className="retro-header border-b-4 border-black">
           <div className="flex gap-2">
-            <div className="w-4 h-4 bg-white border-2 border-black"></div>
-            <span>CHRACTER_STATUS.sys</span>
-          </div>
-          <div className="flex gap-2">
-            <div className="w-4 h-4 bg-white border-2  border-black text-black flex items-center justify-center text-[8px]">_</div>
-            <div className="w-4 h-4 bg-white border-2  border-black text-black flex items-center justify-center text-[8px]">X</div>
-          </div>
+              <div className="w-4 h-4 bg-white border-2 border-black"></div>
+              <span>CHRACTER_STATUS.sys</span>
+            </div>
         </div>
         {/* 資訊區域 */}
         <div className="p-4 md:p-8 flex flex-col lg:flex-row gap-8 relative">
           {/* 左側*/}
-          <div className="w-full lg:w-1/3 flex flex-col items-center gap-6">
+          <div className="w-full lg:w-72 flex flex-col items-center gap-6">
           {/* 頭像區域 */}
-          <div className="retro-window w-48 h-48 relative overflow-hidden">
+          <div className="retro-window w-48 h-48 md:w-64 md:h-64 relative overflow-hidden">
             <img src="/profile.jpg" alt="profile" className="w-full h-full object-cover"/>
-            <div className="absolute bottom-2 right-2 bg-[#FF9149] border-2 border-black px-2 py-1 text-[8px] text-black">LV.21</div>
+            <div className="absolute bottom-2 right-2 bg-[#FF9149] border-2 border-black px-2 py-1 text-[10px] text-black">LV.21</div>
           </div>
             {/* 基本資訊 */}
             <div className="retro-window p-4 w-full text-center" style={{ backgroundColor: '#FFECDB' }} >
-              <h2 className="text-sm font-bold mb-2">林品妤 PIN YU LIN</h2>
-              <p className="text-[8px] text-gray-500">廣電三 & 數位內容</p>
+              <h2 className="text-sm md:text-base font-bold mb-2">林品妤 PIN YU LIN</h2>
+              <p className="text-[10px] text-gray-500">廣電三 & 數位內容</p>
             </div>
           </div>
 
           {/* 右側 */}
           <div className="flex-1 flex flex-col gap-6">
             {/* 屬性區域 */}
-            <div className="retro-window p-6" style={{ backgroundColor: '#FFECDB' }}>
+            <div className="retro-window p-6 md:p-8" style={{ backgroundColor: '#FFECDB' }}>
               {/* 標題 */}
-              <h3 className="text-[10px] font-bold mb-4 flex items-center gap-2">
-                <Star size={14} className="text-yellow-500" />
+              <h3 className="text-xs md:text-sm font-bold mb-4 flex items-center gap-2">
+                <Star size={16} className="text-yellow-500" />
                 屬性值 ATTRIBUTES
               </h3>
               {/* 屬性條 */}
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-5">
                 {stats.map((stat, index) => (
                   <div key={index} className="flex flex-col gap-1">
                     {/* 屬性標籤與數值 */}
-                    <div className="flex justify-between text-[8px]">
+                    <div className="flex justify-between text-[10px] md:text-xs">
                       <span>{stat.label}</span>
                       <span>{stat.value}/100</span>
                     </div>
@@ -79,12 +74,12 @@ export default function About() {
               </div>
             </div>
             {/* 個人簡介區塊 */}
-            <div className="retro-window p-6" style={{ backgroundColor: '#FFECDB' }}>
-              <h3 className="text-[10px] font-bold mb-3 flex items-center gap-2">
-                <Heart size={14} className="text-red-500" />
+            <div className="retro-window p-6 md:p-8" style={{ backgroundColor: '#FFECDB' }}>
+              <h3 className="text-xs md:text-sm font-bold mb-3 flex items-center gap-2">
+                <Heart size={16} className="text-red-500" />
                 個人簡介 BIO
               </h3>
-              <p className="text-[8px] md:text-[10px] leading-loose text-gray-700">
+              <p className="text-[10px] md:text-xs leading-loose text-gray-700">
                 一個超級大 I 人，MBTI測出來有90% I 的程度。手速極慢，皮克敏搶菇都搶不到。 
               </p>
             </div>
