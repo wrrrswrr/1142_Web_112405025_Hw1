@@ -16,8 +16,9 @@ export default function Code() {
     <div className="flex flex-col gap-6">
       {/* 頁面動畫 */}
       <motion.div 
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.5, type: "spring" }}
         className="retro-window bg-white overflow-hidden">
         {/* 視窗頂部 */}
         <div className="bg-[#222] p-2 flex justify-between items-center border-b-2 border-black">

@@ -18,7 +18,7 @@ export default function Home() {
 
   /* 頁面主容器 */
   return (
-    <div className="flex flex-col items-center justify-center min-h-[70vh] gap-8">     
+    <div className="flex flex-col items-center justify-center min-h-[70vh] gap-8">    
       {/* 視窗 */}
       <motion.div 
         initial={{ scale: 0.8, opacity: 0 }}

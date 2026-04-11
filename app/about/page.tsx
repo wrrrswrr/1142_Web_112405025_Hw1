@@ -15,13 +15,20 @@ export default function About() {
     <div className="flex flex-col gap-6">
       {/* 頁面動畫 */}
       <motion.div 
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.5, type: "spring" }}
         className="retro-window bg-white overflow-hidden">
         {/* 視窗頂部 */}
         <div className="retro-header border-b-4 border-black">
-          <span>MY_STATUS.sys</span>
-          <div className="w-3 h-3 bg-white border-2 border-black"></div>
+          <div className="flex gap-2">
+            <div className="w-4 h-4 bg-white border-2 border-black"></div>
+            <span>CHRACTER_STATUS.sys</span>
+          </div>
+          <div className="flex gap-2">
+            <div className="w-4 h-4 bg-white border-2  border-black text-black flex items-center justify-center text-[8px]">_</div>
+            <div className="w-4 h-4 bg-white border-2  border-black text-black flex items-center justify-center text-[8px]">X</div>
+          </div>
         </div>
         {/* 資訊區域 */}
         <div className="p-4 md:p-8 flex flex-col lg:flex-row gap-8 relative">
@@ -78,7 +85,7 @@ export default function About() {
                 個人簡介 BIO
               </h3>
               <p className="text-[8px] md:text-[10px] leading-loose text-gray-700">
-                一個超級大 I 人，MBTI測出來有90% I 的程度。手速極慢，皮克敏搶菇都搶不到 (╥﹏╥)。 
+                一個超級大 I 人，MBTI測出來有90% I 的程度。手速極慢，皮克敏搶菇都搶不到。 
               </p>
             </div>
           </div>

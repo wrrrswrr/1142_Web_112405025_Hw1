@@ -22,9 +22,10 @@ export default function Hobby() {
         className="retro-window p-4 md:p-8 bg-white">
         {/* 大標題 */}
         <div className="flex justify-between items-center mb-8 border-b-4 border-black pb-2">
-          <h2 className="text-lg md:text-xl font-bold">我的興趣 HOBBIES</h2>
-          <div className="text-[8px] bg-black text-white px-2 py-1">INVENTORY</div>
+          <h2 className="text-lg md:text-xl font-bold">我的興趣 HOBBY</h2>
+          <div className="text-[8px] bg-black text-white px-2 py-1">COLLECTION</div>
         </div>
+        <p className="text-[10px] text-gray-600 mb-8 font-mono tracking-widest">LOADING CHRACTER BACKGROUND...</p>
         {/* 興趣卡片 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {hobbies.map((hobby, index) => (

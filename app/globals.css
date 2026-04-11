@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
 /* 定義全域 CSS 變數 */
 :root {
@@ -8,28 +10,29 @@
   --window-border: #222;
   --accent-pink: #FF9149;
   --accent-blue: #60B5FF;
+  --ease-steps: steps(10);
 }
 
-/* 設定網頁主體的樣式 */
-body {
+body { /* 設定網頁主體的樣式 */
   background-color: var(--bg-retro);
-  color: #222;
-  image-rendering: pixelated; /* 讓圖片縮放時保持像素邊緣，不產生模糊 */
+  font-family: var(--font-pixel), cursive;
+  color: #222; 
+  image-rendering: pixelated; 
 }
 
 /* 視窗樣式 */
 .retro-window {
   background: var(--window-bg);
-  border: 4px solid var(--window-border); /* 設定 4px 的粗黑邊框 */
-  box-shadow: 4px 4px 0px 0px rgba(0,0,0,1); /* 設定硬陰影 */
-  position: relative; /* 設定相對定位 */
+  border: 4px solid var(--window-border);
+  box-shadow: 4px 4px 0px 0px rgba(0,0,0,1); 
+  position: relative;
 }
 
 /* 視窗頂部標題列樣式 */
 .retro-header {
   background: var(--window-border);
   color: white;
-  padding: 4px 8px; /* 設定內距 */
+  padding: 4px 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,29 +44,29 @@ body {
   border: 2px solid #222;
   box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
   padding: 8px 12px;
-  cursor: pointer; /* 滑鼠移入時顯示手指圖示 */
-  transition: all 0.1s; /* 設定 0.1 秒的過渡動畫 */
+  cursor: pointer;
+  transition: all 0.1s;
   font-size: 12px;
-  display: inline-block; /* 設定為行內區塊元素 */
+  display: inline-block;
 }
 
 /* 按鈕被點擊時的狀態 */
 .retro-button:active {
-  box-shadow: 0px 0px 0px 0px rgba(0,0,0,1); /* 移除陰影 */
-  transform: translate(2px, 2px); /* 讓按鈕向右下角位移 2px */
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);
+  transform: translate(2px, 2px);
 }
 
 /* 左側欄項目樣式 */
 .sidebar-item {
   padding: 12px;
   margin-bottom: 8px;
-  border: 2px solid transparent; /* 預設邊框為透明 */
-  transition: all 0.2s; /* 設定 0.2 秒的過渡動畫 */
+  border: 2px solid transparent;
+  transition: all 0.2s;
 }
 
 /* 定義捲動條整體的寬度 */
 ::-webkit-scrollbar {
-  width: 12px;  /* 垂直捲動條的寬度 */
+  width: 12px;
 }
 
 /* 定義捲動條的軌道 */
