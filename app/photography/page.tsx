@@ -6,7 +6,7 @@ import Image from "next/image";
 import { X } from "lucide-react";
 
 const photos = [
-  { id: 1, src: "/1.jpg", alt: "1", width: 6000, height: 4000 },
+  { id: 1, src: "/1.JPG", alt: "1", width: 6000, height: 4000 },
   { id: 2, src: "/2.JPG", alt: "2", width: 6000, height: 4000 },
   { id: 3, src: "/3.jpg", alt: "3", width: 3008, height: 4000 },
   { id: 4, src: "/4.JPG", alt: "4", width: 6000, height: 4000 },
