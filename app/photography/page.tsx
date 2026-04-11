@@ -7,20 +7,20 @@ import { X } from "lucide-react";
 
 const photos = [
   { id: 1, src: "/1.jpg", alt: "1", width: 6000, height: 4000 },
-  { id: 2, src: "/2.jpg", alt: "2", width: 6000, height: 4000 },
+  { id: 2, src: "/2.JPG", alt: "2", width: 6000, height: 4000 },
   { id: 3, src: "/3.jpg", alt: "3", width: 3008, height: 4000 },
-  { id: 4, src: "/4.jpg", alt: "4", width: 6000, height: 4000 },
-  { id: 5, src: "/5.jpg", alt: "5", width: 6000, height: 4000 },
-  { id: 6, src: "/6.jpg", alt: "6", width: 6000, height: 4000 },
+  { id: 4, src: "/4.JPG", alt: "4", width: 6000, height: 4000 },
+  { id: 5, src: "/5.JPG", alt: "5", width: 6000, height: 4000 },
+  { id: 6, src: "/6.JPG", alt: "6", width: 6000, height: 4000 },
   { id: 7, src: "/7.jpg", alt: "7", width: 4000, height: 6000 },
-  { id: 8, src: "/8.jpg", alt: "8", width: 6000, height: 4000 },
-  { id: 9, src: "/9.jpg", alt: "9", width: 6000, height: 4000 },
+  { id: 8, src: "/8.JPG", alt: "8", width: 6000, height: 4000 },
+  { id: 9, src: "/9.JPG", alt: "9", width: 6000, height: 4000 },
   { id: 10, src: "/10.jpg", alt: "10", width: 6000, height: 4000 },
   { id: 11, src: "/11.jpg", alt: "11", width: 6000, height: 4000 },
   { id: 12, src: "/12.jpg", alt: "12", width: 6000, height: 4000 },
   { id: 13, src: "/13.jpg", alt: "13", width: 4958, height: 3801 },
-  { id: 14, src: "/14.jpg", alt: "14", width: 6000, height: 4000 },
-  { id: 15, src: "/15.jpg", alt: "15", width: 6000, height: 4000 },
+  { id: 14, src: "/14.JPG", alt: "14", width: 6000, height: 4000 },
+  { id: 15, src: "/15.JPG", alt: "15", width: 6000, height: 4000 },
 ];
 
 export default function PhotographyPage() {
