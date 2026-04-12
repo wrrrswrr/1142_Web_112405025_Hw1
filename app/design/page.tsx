@@ -282,7 +282,7 @@ export default function Design() {
                         onClick={() => setSelectedProject(null)}
                         className="retro-button w-full bg-[#eee] hover:bg-white text-black text-[10px] font-bold"
                       >
-                        CLOSE
+                        CLOSE WINDOW
                       </button>
                     </div>
                   </div>
