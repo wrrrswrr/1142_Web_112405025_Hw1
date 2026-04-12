@@ -7,6 +7,7 @@ import { X, ExternalLink, ChevronLeft, ChevronRight, Eye } from "lucide-react";
 export default function Design() {
   const [selectedProject, setSelectedProject] = useState<null | typeof projects[0]>(null);
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
+  const [viewMode, setViewMode] = useState<"images" | "prototype">("images");
 
 
   const projects = [
@@ -16,14 +17,15 @@ export default function Design() {
       footercolor: "#FF9149", 
       images: ["/socketthief.jpg"], 
       link: "https://excellent-environment-840225.framer.app/#hero",
-      description: "這是一款能隨時隨地偷電的APP，幫助你找到最近的插座。"
+      figmaEmbedUrl: "https://embed.figma.com/proto/EgAKt7i0HXd9IhAqOJFv3k/%E6%9C%9F%E6%9C%AB%E5%81%B7%E9%9B%BB?node-id=67-556&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=67%3A556&embed-host=share",
+      description: "這是一款能隨時隨地偷電的APP，幫助你找到最近的插座。",
     },
     { 
       title: "AE動畫《Not This Way!》", 
       category: "AE/AI", 
       footercolor: "#AFDDFF", 
       images: ["/notthisway.jpg"], 
-      link: "https://youtu.be/18ydl3TrEJI",
+      videoUrl: "https://www.youtube.com/embed/18ydl3TrEJI?si=lyqMUUOpW1q0vqXo",
       description: "使用 After Effects 與 Illustrator 製作的動態影像作品，關於一個政大學生搭到反方向捷運的故事。"
     },
     { 
@@ -59,7 +61,7 @@ export default function Design() {
       title: "LOGO設計《FOX FRIES》", 
       category: "AI", 
       footercolor: "#FF9149", 
-      images: ["/logo.png"], 
+      images: ["/logo.png", "/logo1.png"], 
       link: "",
       description: "此為數位平台Illustrator課程中設計的虛擬品牌LOGO。"
     },
@@ -112,7 +114,7 @@ export default function Design() {
     },
     { 
       title: "AI作品《Donut Bird》", 
-      category: "AE/AI", 
+      category: "AI", 
       footercolor: "#ffcc9f", 
       images: ["/bird.jpg"], 
       link: "",
@@ -170,7 +172,7 @@ export default function Design() {
         {/* 大標題 */}
         <div className="flex justify-between items-center mb-8 border-b-4 border-black pb-2">
           <h2 className="text-lg md:text-xl font-bold text-black">設計作品 DESIGN</h2>
-          <div className="text-[8px] bg-black text-white px-2 py-1">INVENTORY</div>
+          <div className="text-[8px] bg-black text-white px-2 py-1">ARCHIVE</div>
         </div>       
         {/* 作品區域 */}
         <div className="columns-1 sm:columns-2 gap-6 space-y-6">
@@ -232,7 +234,7 @@ export default function Design() {
               initial={{ scale: 0.9, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
-              className="retro-window w-full max-w-lg bg-white overflow-hidden relative z-10"
+              className="retro-window w-full max-w-4xl bg-white overflow-hidden relative z-10"
             >
               {/* 彈窗標題列 */}
               <div className="retro-header border-b-4 border-black p-2 flex justify-between items-center bg-black text-white">
@@ -246,70 +248,132 @@ export default function Design() {
               </div>
 
               <div className="p-4 md:p-6 flex flex-col gap-4 overflow-y-auto max-h-[calc(90vh-100px)]">
-                {/* 圖片預覽 */}
-                <div className="flex justify-center w-full">
-                  <div className="retro-window overflow-hidden relative group/slider w-fit max-w-full bg-white">
-                    <img 
-                      src={selectedProject.images[currentImgIndex]} 
-                      alt={selectedProject.title} 
-                      className="block max-w-full max-h-[50vh] w-auto h-auto object-contain" 
-                    />
-                    
-                    {/* 左右切換按鈕 */}
-                    {selectedProject.images.length > 1 && (
-                      <>
-                        <button 
-                          onClick={prevImg}
-                          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white border-2 border-black p-1 hover:bg-[#FF9149] transition-colors shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] z-20"
-                        >
-                          <ChevronLeft size={20} />
-                        </button>
-                        <button 
-                          onClick={nextImg}
-                          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white border-2 border-black p-1 hover:bg-[#FF9149] transition-colors shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] z-20"
-                        >
-                          <ChevronRight size={20} />
-                        </button>
-                        {/* 頁碼指示 */}
-                        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/80 text-white text-[8px] px-2 py-1 border border-white z-20">
-                          {currentImgIndex + 1} / {selectedProject.images.length}
+                {/* 判斷是否為影片模式，影片模式維持上下排版，非影片模式改為左右排版 */}
+                {selectedProject.videoUrl ? (
+                  <div className="flex flex-col gap-4">
+                    {/* 影片播放器 */}
+                    <div className="flex justify-center w-full">
+                      <div className="retro-window w-full aspect-video overflow-hidden bg-black relative">
+                        <iframe 
+                          className="w-full h-full border-0"
+                          src={selectedProject.videoUrl}
+                          title="YouTube video player"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                          referrerPolicy="strict-origin-when-cross-origin"
+                        />
+                      </div>
+                    </div>
+
+                    {/* 影片資訊 */}
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-2">
+                        <span className="text-[8px] bg-black text-white px-2 py-0.5">{selectedProject.category}</span>
+                        <h3 className="font-bold text-sm text-black">{selectedProject.title}</h3>
+                      </div>
+                      <p className="text-[10px] leading-relaxed text-gray-700 font-mono">
+                        {selectedProject.description}
+                      </p>
+                    </div>
+
+                    {/* 影片操作按鈕 */}
+                    <div className="flex gap-3 mt-2">
+                      <button 
+                        onClick={() => setSelectedProject(null)}
+                        className="retro-button w-full bg-[#eee] hover:bg-white text-black text-[10px] font-bold"
+                      >
+                        CLOSE
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="flex flex-col md:flex-row gap-6">
+                    {/* 左側*/}
+                    <div className="flex-1 flex justify-center items-start">
+                      {selectedProject.figmaEmbedUrl ? (
+                        <div className={`retro-window overflow-hidden bg-black w-full ${selectedProject.category === 'UI' ? 'max-w-[320px] aspect-9/19.5' : 'aspect-video md:aspect-4/3'} max-h-[60vh]`}>
+                          <iframe 
+                            className="w-full h-full border-0"
+                            src={selectedProject.figmaEmbedUrl} 
+                            allowFullScreen
+                            allow="clipboard-write; draw-on-canvas; focus-start; fullscreen; geolocation; microphone; model-viewer; xr-spatial-tracking"
+                          />
                         </div>
-                      </>
-                    )}
-                  </div>
-                </div>
+                      ) : (
+                        <div className="retro-window overflow-hidden relative group/slider w-fit max-w-full bg-white">
+                          <img 
+                            src={selectedProject.images[currentImgIndex]} 
+                            alt={selectedProject.title} 
+                            className="block max-w-full max-h-[60vh] w-auto h-auto object-contain" 
+                          />
+                          
+                          {/* 左右切換按鈕 */}
+                          {selectedProject.images.length > 1 && (
+                            <>
+                              <button 
+                                onClick={prevImg}
+                                className="absolute left-2 top-1/2 -translate-y-1/2 bg-white border-2 border-black p-1 hover:bg-[#FF9149] transition-colors shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] z-20"
+                              >
+                                <ChevronLeft size={20} />
+                              </button>
+                              <button 
+                                onClick={nextImg}
+                                className="absolute right-2 top-1/2 -translate-y-1/2 bg-white border-2 border-black p-1 hover:bg-[#FF9149] transition-colors shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] z-20"
+                              >
+                                <ChevronRight size={20} />
+                              </button>
+                              {/* 頁碼指示 */}
+                              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/80 text-white text-[8px] px-2 py-1 border border-white z-20">
+                                {currentImgIndex + 1} / {selectedProject.images.length}
+                              </div>
+                            </>
+                          )}
+                        </div>
+                      )}
+                    </div>
 
-                {/* 文字資訊 */}
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2">
-                    <span className="text-[8px] bg-black text-white px-2 py-0.5">{selectedProject.category}</span>
-                    <h3 className="font-bold text-sm text-black">{selectedProject.title}</h3>
-                  </div>
-                  <p className="text-[10px] leading-relaxed text-gray-700 font-mono">
-                    {selectedProject.description}
-                  </p>
-                </div>
+                    {/* 右側 */}
+                    <div className="w-full md:w-[320px] flex flex-col gap-6 shrink-0 bg-[#f9f9f9] p-6 border-l-4 border-black">
+                      <div className="space-y-4">
+                        <div className="space-y-2">
+                          <span className="inline-block text-[10px] bg-black text-white px-2 py-1 font-bold tracking-wider">
+                            {selectedProject.category}
+                          </span>
+                          <h3 className="font-bold text-xl text-black leading-tight border-b-2 border-black pb-2">
+                            {selectedProject.title}
+                          </h3>
+                        </div>
+                        
+                        <div className="relative">
+                          <div className="absolute -left-3 top-0 bottom-0 w-1 bg-[#FF9149]"></div>
+                          <p className="text-[11px] leading-relaxed text-gray-800 font-mono pl-2">
+                            {selectedProject.description}
+                          </p>
+                        </div>
+                      </div>
 
-                {/* 操作按鈕 */}
-                <div className="flex gap-3 mt-2">
-                  {selectedProject.link && (
-                    <a 
-                      href={selectedProject.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="retro-button flex-1 bg-[#AFDDFF] hover:bg-white text-black flex flex-row items-center justify-center gap-2 text-[10px] font-bold leading-none whitespace-nowrap"
-                    >
-                      <ExternalLink size={14} className="shrink-0" />
-                      <span>查看作品 VIEW PROJECT</span>
-                    </a>
-                  )}
-                  <button 
-                    onClick={() => setSelectedProject(null)}
-                    className={`retro-button ${selectedProject.link ? 'flex-1' : 'w-full'} bg-[#eee] hover:bg-white text-black text-[10px] font-bold`}
-                  >
-                    CLOSE
-                  </button>
-                </div>
+                      <div className="flex flex-col gap-3 mt-auto pt-6 border-t-2 border-dashed border-gray-400">
+                        {selectedProject.link && (
+                          <a 
+                            href={selectedProject.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="retro-button w-full bg-[#AFDDFF] hover:bg-white text-black flex flex-row items-center justify-center gap-2 text-[10px] font-bold py-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all"
+                          >
+                            <ExternalLink size={14} className="shrink-0" />
+                            <span>查看作品 VIEW PROJECT</span>
+                          </a>
+                        )}
+                        <button 
+                          onClick={() => setSelectedProject(null)}
+                          className="retro-button w-full bg-[#eee] hover:bg-white text-black text-[10px] font-bold py-3 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all"
+                        >
+                          CLOSE WINDOW
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* 底部裝飾條 */}
