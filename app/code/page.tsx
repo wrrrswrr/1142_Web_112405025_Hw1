@@ -8,7 +8,20 @@ export default function Code() {
     { 
       name: "政大生的一學期_THIS_SEMESTER_IN_NCCU",  
       desc: "這是某期末作業做出來的文字遊戲，此為使用gemini美化過後的版本",
-      tags: ["遊戲", "生活模擬", "文字冒險"]
+      tags: ["遊戲", "生活模擬", "文字冒險"],
+      href: "https://gemini.google.com/share/26e2ff4cff64",
+    },
+    { 
+      name: "深宮迷案_ANCIENT_PALACE_SECRETS",  
+      desc: "這是小組期末解謎網頁遊戲專案，由我負責生成素材以及製作整體框架和劇情",
+      tags: ["遊戲", "解謎", "視覺小說"],
+      href: "https://1142-final-project.vercel.app/",
+    },
+    { 
+      name: "心理測驗_PSYCHOLOGICAL_TEST",  
+      desc: "這是一個自製心理測驗網頁",
+      tags: ["心理測驗", "休閒"],
+      href: "https://1142-web-112405025-hw2.vercel.app/",
     },
   ];
 
@@ -69,7 +82,7 @@ export default function Code() {
                   </div>
                   {/* 右側按鈕 */}
                   <div className="flex items-center gap-4">
-                    <a href="https://gemini.google.com/share/26e2ff4cff64" target="_blank" rel="noopener noreferrer" className="retro-button text-black text-[8px] px-4 py-2 font-bold bg-[#ffcc9f] hover:bg-[#FF9149]">
+                    <a href={project.href} target="_blank" rel="noopener noreferrer" className="retro-button text-black text-[8px] px-4 py-2 font-bold bg-[#ffcc9f] hover:bg-[#FF9149]">
                       VIEW_SOURCE
                     </a>
                   </div>
