@@ -31,7 +31,7 @@ const MenuContent = () => {
         </div>
         <div className="text-center">
           <h1 className="text-sm font-bold mb-1 text-black">林品妤</h1>
-          <p className="text-[8px] text-gray-600">廣電三 & 數位內容</p>
+          <p className="text-[8px] text-gray-600">廣電 & 數位內容</p>
         </div>
       </div>
 
