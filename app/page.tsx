@@ -24,7 +24,7 @@ export default function Home() {
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5, type: "spring" }}
-        className="retro-window w-full max-w-[500px] bg-[#fff3e9]">
+        className="retro-window w-full max-w-125 bg-[#fff3e9]">
         {/* 視窗頂部 */}
         <div className="retro-header border-b-4 border-black">
           <div className="flex gap-2">
@@ -62,10 +62,10 @@ export default function Home() {
         </div>
       </motion.div>
       {/* 歡迎卡片 */}
-      <div className="retro-window p-6 bg-white w-full max-w-[600px]">
+      <div className="retro-window p-6 bg-white w-full max-w-150">
         <h2 className="text-sm md:text-xl mb-4 border-b-4 border-black pb-2">歡迎來到我的個人網頁</h2>
         <p className="text-[8px] md:text-xs leading-loose">
-          這是一個用Next.js寫成的個人數位履歷網頁，上面的貓咪是做好玩的，可以不理他。
+          這是我的個人數位履歷網頁，上面的貓咪是做好玩的，不理他也能正常用。
         </p>
       </div>
     </div>

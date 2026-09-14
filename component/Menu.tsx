@@ -24,7 +24,7 @@ const MenuContent = () => {
     <div className="flex flex-col w-full h-full p-4 md:p-6 bg-white gap-4 md:gap-6 overflow-y-auto">
       {/* 個人資訊區塊 */}
       <div className="flex flex-row md:flex-col items-center justify-center md:justify-start gap-4">
-        <div className="retro-window w-[100px] h-[100px]">
+        <div className="retro-window w-25 h-25">
           <div className="w-full h-full relative">
             <img src="me.jpg" alt="me" className="w-full h-full object-cover"/>
           </div>
@@ -65,7 +65,7 @@ const MenuContent = () => {
 // 電腦版側邊欄
 export function DesktopSidebar() {
   return (
-    <div className="hidden md:flex flex-col w-[260px] h-full border-r-4 border-black bg-white z-10 shrink-0">
+    <div className="hidden md:flex flex-col w-65 h-full border-r-4 border-black bg-white z-10 shrink-0">
       <MenuContent />
     </div>
   );
@@ -110,9 +110,9 @@ export function MobileMenu() {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="md:hidden fixed top-0 left-0 w-[260px] h-full bg-white border-r-4 border-black z-110 shadow-2xl flex flex-col"
+              className="md:hidden fixed top-0 left-0 w-65 h-full bg-white border-r-4 border-black z-110 shadow-2xl flex flex-col"
             >
-              <div className="h-[44px] bg-black border-b-4 border-black shrink-0 flex items-center px-4">
+              <div className="h-11 bg-black border-b-4 border-black shrink-0 flex items-center px-4">
                 <span className="text-white text-[10px] tracking-widest">MENU</span>
               </div>
               <MenuContent />

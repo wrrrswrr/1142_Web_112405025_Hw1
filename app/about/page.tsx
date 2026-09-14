@@ -31,13 +31,13 @@ export default function About() {
           <div className="w-full lg:w-72 flex flex-col items-center gap-6">
           {/* 頭像區域 */}
           <div className="retro-window w-48 h-48 md:w-64 md:h-64 relative overflow-hidden">
-            <img src="/profile.jpg" alt="profile" className="w-full h-full object-cover"/>
+            <img src="/me.jpg" alt="me" className="w-full h-full object-cover"/>
             <div className="absolute bottom-2 right-2 bg-[#FF9149] border-2 border-black px-2 py-1 text-[10px] text-black">LV.21</div>
           </div>
             {/* 基本資訊 */}
             <div className="retro-window p-4 w-full text-center" style={{ backgroundColor: '#FFECDB' }} >
               <h2 className="text-sm md:text-base font-bold mb-2">林品妤 PIN YU LIN</h2>
-              <p className="text-[10px] text-gray-500">廣電三 & 數位內容</p>
+              <p className="text-[10px] text-gray-500">廣電 & 數位內容</p>
             </div>
           </div>
 
@@ -59,7 +59,7 @@ export default function About() {
                       <span>{stat.label}</span>
                       <span>{stat.value}/100</span>
                     </div>
-                    <div className="w-full h-4 bg-white border-2 border-black p-[2px]">
+                    <div className="w-full h-4 bg-white border-2 border-black p-0.5">
                       {/* 屬性條出場動畫 */}
                       <motion.div 
                         initial={{ width: 0 }}
@@ -80,7 +80,7 @@ export default function About() {
                 個人簡介 BIO
               </h3>
               <p className="text-[10px] md:text-xs leading-loose text-gray-700">
-                一個超級大 I 人，MBTI測出來有90% I 的程度。手速極慢，皮克敏搶菇都搶不到。 
+                一個超級大 I 人，MBTI測出來有90% I 的程度。每天都在告訴自己要早睡當健康人，但很顯然還沒成功過。 
               </p>
             </div>
           </div>
@@ -101,7 +101,7 @@ export default function About() {
               className="bg-white border-2 border-black px-2 py-1 relative shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
               <p className="text-[10px] text-black whitespace-nowrap animate-pulse">I put the 'Pro' in procrastinate</p>
               {/* 氣泡小尾巴 */}
-              <div className="absolute top-1/2 -left-[5px] -translate-y-1/2 w-2 h-2 bg-white border-l-2 border-b-2 border-black rotate-45"></div>
+              <div className="absolute top-1/2 -left-1.25 -translate-y-1/2 w-2 h-2 bg-white border-l-2 border-b-2 border-black rotate-45"></div>
             </motion.div>
           </div>
         </div>
