@@ -31,7 +31,7 @@ export default function About() {
           <div className="w-full lg:w-72 flex flex-col items-center gap-6">
           {/* 頭像區域 */}
           <div className="retro-window w-48 h-48 md:w-64 md:h-64 relative overflow-hidden">
-            <img src="/me.jpg" alt="me" className="w-full h-full object-cover"/>
+            <img src="/photo.jpg" alt="photo" className="w-full h-full object-cover"/>
             <div className="absolute bottom-2 right-2 bg-[#FF9149] border-2 border-black px-2 py-1 text-[10px] text-black">LV.21</div>
           </div>
             {/* 基本資訊 */}
